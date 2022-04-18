@@ -22,13 +22,12 @@ class Product(models.Model):
     brand = models.ForeignKey('Brand', on_delete=models.SET_NULL, null=True)
     productType = models.ForeignKey('ProductType', on_delete=models.SET_NULL, null=True)
     displayType = models.ForeignKey('DisplayType', on_delete=models.SET_NULL, null=True)
+    displaySize = models.IntegerField()
     operatingSystem = models.ForeignKey('OS', on_delete=models.SET_NULL, null=True)
     deliveryTime = models.DurationField()
     deliveryCharge = models.BooleanField()
     price = models.IntegerField()
     def __str__(self):
-        """String for representing the Model object."""
-        return self.id
+        return f'{self.displaySize}" {self.brand} {self.displayType} {self.productType}'
     def get_absolute_url(self):
-        """Returns the URL to access a detail record for this book."""
-        return reverse('book-detail', args=[str(self.id)])
+        return reverse('product-detail', args=[str(self.id)])
