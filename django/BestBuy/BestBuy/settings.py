@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'BestBuy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bestbuy',
-        'USER': 'bestBuyAdmin',
-        'PASSWORD': 'circuitcity',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
