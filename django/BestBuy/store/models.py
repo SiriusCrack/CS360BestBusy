@@ -2,27 +2,27 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-class Brands(models.Model):
+class Brand(models.Model):
     name = models.CharField(max_length=200, help_text='Brand name')
     def __str__(self):
         return self.name
-class ProductTypes(models.Model):
+class ProductType(models.Model):
     name = models.CharField(max_length=200, help_text='Product type')
     def __str__(self):
         return self.name
-class DisplayTypes(models.Model):
+class DisplayType(models.Model):
     name = models.CharField(max_length=200, help_text='Display type')
     def __str__(self):
         return self.name
-class OSes(models.Model):
+class OS(models.Model):
     name = models.CharField(max_length=200, help_text='OS')
     def __str__(self):
         return self.name
 class Product(models.Model):
-    brand = models.ForeignKey('Brands', on_delete=models.SET_NULL, null=True)
-    productType = models.ForeignKey('ProductTypes', on_delete=models.SET_NULL, null=True)
-    displayType = models.ForeignKey('DisplayTypes', on_delete=models.SET_NULL, null=True)
-    operatingSystem = models.ForeignKey('OSes', on_delete=models.SET_NULL, null=True)
+    brand = models.ForeignKey('Brand', on_delete=models.SET_NULL, null=True)
+    productType = models.ForeignKey('ProductType', on_delete=models.SET_NULL, null=True)
+    displayType = models.ForeignKey('DisplayType', on_delete=models.SET_NULL, null=True)
+    operatingSystem = models.ForeignKey('OS', on_delete=models.SET_NULL, null=True)
     deliveryTime = models.DurationField()
     deliveryCharge = models.BooleanField()
     price = models.IntegerField()
