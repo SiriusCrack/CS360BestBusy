@@ -9,4 +9,4 @@ Built using Django.
 * Login: `bestbuyadmin`
 * Password: `circuitcity`
 
-[Visit Site](bestbuy.jake.dog:4230/)
+[Visit Site](http://bestbuy.jake.dog:4230/)
