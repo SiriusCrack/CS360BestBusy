@@ -13,13 +13,15 @@
   <!-- Add additional CSS in static file -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/product.css' %}" type="text/css">
 </head>
 <body>
   <div class="nav">
     {% block sidebar %}
-    <div class="home"><a href="">Home</a></div>
-    <div class="products"><a href="{% url 'product' %}">Products</a></div>
-    <div class="about"><a href="">About</a></div>
+    <div class="home"><a href="{% url 'index' %}">Home</a></div>
+    <div class="products"><a href="{% url 'products' %}">Products</a></div>
+    <div class="about"><a href="https://github.com/SiriusCrack/CS360BestBuy">About</a></div>
     {% endblock %}
   </div>
   <div>{% block content %}{% endblock %}</div>
