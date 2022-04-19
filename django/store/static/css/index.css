@@ -1,11 +1,42 @@
-.sidebar-nav {
-    margin-top: 20px;
-    height: 100%;
-    background-color: grey;
-    padding: 0;
-    list-style: none;
+.title, .slogan, h3 {
+    text-align: center;
+    font-size: 72px;
+    font-weight: bold;
+    margin-top: 1em;
 }
-.title {
-    text-align: left;
-    font-size: 48px;
+
+.slogan {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 300;
 }
+
+h3 {
+    margin-top: 3em;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.search-wrapper {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-wrapper button {
+    margin: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ff9999;
+    border: none;
+    font-weight: 300;
+    color: white;
+    font-size: 1em;
+}
+
+button a:hover {
+    color: #0a4abf;
+}
+
+
