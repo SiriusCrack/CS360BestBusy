@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Brand, ProductType, DisplayType, OS, Product
+from .models import Brand, ProductType, DisplayType, Product
 
 def index(request):
     """View function for home page of site."""

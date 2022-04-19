@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Brand, ProductType, DisplayType, OS, Product
+from .models import Brand, ProductType, DisplayType, Product
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
@@ -12,9 +12,6 @@ class ProductTypeAdmin(admin.ModelAdmin):
 @admin.register(DisplayType)
 class DisplayTypeAdmin(admin.ModelAdmin):
     fields = ['name']
-@admin.register(OS)
-class OSAdmin(admin.ModelAdmin):
-    fields = ['name']
 @admin.register(Product)
 class OSAdmin(admin.ModelAdmin):
     fields = [
@@ -22,7 +19,6 @@ class OSAdmin(admin.ModelAdmin):
         'productType',
         'displayType',
         'displaySize',
-        'operatingSystem',
         'deliveryTime',
         'deliveryCharge',
         'price',

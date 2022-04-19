@@ -14,16 +14,11 @@ class DisplayType(models.Model):
     name = models.CharField(max_length=200, help_text='Display type')
     def __str__(self):
         return self.name
-class OS(models.Model):
-    name = models.CharField(max_length=200, help_text='OS')
-    def __str__(self):
-        return self.name
 class Product(models.Model):
     brand = models.ForeignKey('Brand', on_delete=models.SET_NULL, null=True)
     productType = models.ForeignKey('ProductType', on_delete=models.SET_NULL, null=True)
     displayType = models.ForeignKey('DisplayType', on_delete=models.SET_NULL, null=True)
     displaySize = models.IntegerField()
-    operatingSystem = models.ForeignKey('OS', on_delete=models.SET_NULL, null=True)
     deliveryTime = models.IntegerField()
     deliveryCharge = models.BooleanField()
     price = models.IntegerField()
