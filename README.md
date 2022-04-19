@@ -1,6 +1,6 @@
 # Best Buy
 
-CS360 Best Buy project by Morgan Brockman and Ian Felming
+CS360 Best Buy project by Morgan Brockman and Ian Fleming
 
 ## Info
 
