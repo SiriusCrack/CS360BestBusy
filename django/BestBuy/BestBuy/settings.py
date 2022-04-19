@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qno9yc+t(vgiyi6=2#2kxxx!860d_wd&2%-9=_al(%g$slw8l&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bestbuy.jake.dog']
+ALLOWED_HOSTS = ['bestbuy.jake.dog', '127.0.0.1', 'localhost']
 
 
 # Application definition
