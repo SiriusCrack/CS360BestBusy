@@ -1,14 +1,16 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1 class="product_header">Nice</h1>
-  <form class="d-flex" method="POST" action="{% url 'exactMatch' %}">
+<h1 class="product_header">Exact Match</h1>
+  <form class="search_bar" method="POST" action="{% url 'exactMatch' %}">
     {% csrf_token %}
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
-    <button class="btn btn-outline-sucess" type="submit">Search</button>
+    <input type="search" placeholder="Search" aria-label="Search" name="search">
+    <button type="submit"><span>&#10003;</span></button>
   </form>
   {% if search %}
-    searched for {{ search }}
+    <div class="user-search">
+      Searching for:&#160;<i>{{ search }}</i>
+    </div> 
     {% for product in results %}
       <li class="product_item">
         {{product}}
