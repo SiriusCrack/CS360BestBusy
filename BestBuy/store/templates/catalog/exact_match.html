@@ -9,10 +9,10 @@
   </form>
   {% if search %}
     searched for {{ search }}
-    <!-- {% for product in product_list %}
+    {% for product in results %}
       <li class="product_item">
-        {{product.displaySize}}" {{product.brand}} {{product.displayType}} {{product.productType}}
+        {{product}}
       </li>
-    {% endfor %} -->
+    {% endfor %}
   {% endif %}
 {% endblock %}

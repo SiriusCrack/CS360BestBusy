@@ -15,6 +15,7 @@ class DisplayTypeAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class OSAdmin(admin.ModelAdmin):
     fields = [
+        'productID',
         'brand',
         'productType',
         'displayType',

@@ -19,7 +19,15 @@ def index(request):
 def exactMatch(request):
     if request.method == "POST":
         search = request.POST['search']
-        return render(request, 'catalog/exact_match.html', {'search':search})
+        results = Product.objects.filter(productID=search)
+        return render(
+            request, 
+            'catalog/exact_match.html', 
+            {
+                'search':search,
+                'results':results
+            }
+        )
     else:
         return render(request, 'catalog/exact_match.html')
 
