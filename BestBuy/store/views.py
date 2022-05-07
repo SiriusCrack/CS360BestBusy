@@ -16,12 +16,14 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
-def exactMatch(request):
-    return render(request, 'catalog/exact_match.html')
-
 from django.views import generic
 
 class ProductListView(generic.ListView):
     model = Product
     context_object_name = 'product_list'
     template_name = 'catalog/product_list.html'
+
+class exactMatchListView(generic.ListView):
+    model = Product
+    context_object_name = 'product_list'
+    template_name = 'catalog/exact_match.html'
