@@ -16,6 +16,13 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
+def exactMatch(request):
+    if request.method == "POST":
+        search = request.POST['search']
+        return render(request, 'catalog/exact_match.html', {'search':search})
+    else:
+        return render(request, 'catalog/exact_match.html')
+
 from django.views import generic
 
 class ProductListView(generic.ListView):
