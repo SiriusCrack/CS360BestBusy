@@ -16,6 +16,9 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
+def exactMatch(request):
+    return render(request, 'catalog/exact_match.html')
+
 from django.views import generic
 
 class ProductListView(generic.ListView):
