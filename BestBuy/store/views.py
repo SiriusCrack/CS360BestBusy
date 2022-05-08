@@ -59,17 +59,17 @@ def serviceRequirements(request):
         if displaySize:
             results.filter(displaySize=displaySize)
         if deliveryTime:
-            results.filter(displaySize=deliveryTime)
+            results.filter(deliveryTime=deliveryTime)
         if deliveryCharge:
-            results.filter(displaySize=deliveryCharge)
+            results.filter(deliveryCharge=deliveryCharge)
         if price:
-            results.filter(displaySize=price)
+            results.filter(price=price)
         if brand_id:
-            results.filter(displaySize=brand_id)
+            results.filter(brand_id=brand_id)
         if displayType_id:
-            results.filter(displaySize=displayType_id)
+            results.filter(displayType_id=displayType_id)
         if productType_id:
-            results.filter(displaySize=productType_id)
+            results.filter(productType_id=productType_id)
         return render(
             request,
             'catalog/service_requirements.html',
