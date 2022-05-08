@@ -5,6 +5,11 @@
    font-family: 'Open Sans', sans-serif;;
 }
 
+a:link, a:visited, a:active {
+   text-decoration: none;
+   color: white;
+}
+
 body {
    background-color: #F5F5F5;
 }
@@ -24,11 +29,6 @@ body {
    margin-right: 40px;;
 }
 
-a:active, a:link, a:visited, a:hover {
-   text-decoration: none;
-   color: white;
-}
-
-a:hover {
-   color: lightgray;
+.nav > div > a:hover {
+   color: lightgrey;
 }

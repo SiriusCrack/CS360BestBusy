@@ -11,3 +11,11 @@
 .product_page_item {
    font-weight: lighter;
 }
+
+.product_page_item > a {
+   color: black;
+}
+
+.product_page_item > a:hover {
+   color: grey;
+}

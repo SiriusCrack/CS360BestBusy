@@ -43,7 +43,7 @@ def priorityCriteria(request):
             }
         )
     else:
-        return render(request, 'catalog/exact_match.html')
+        return render(request, 'catalog/priority_criteria.html')
 
 def serviceRequirements(request):
     if request.method == "POST":
