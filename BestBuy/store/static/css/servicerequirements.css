@@ -1,0 +1,60 @@
+.req_header {
+   margin: 1em;
+   text-align: center;
+}
+
+.req_form {
+   display: block;
+   margin: auto;
+   width: fit-content;
+   text-align: center;
+}
+
+.option_wrapper {
+   padding: 1em;
+   text-align: left;
+   display: list-item;
+   list-style-type: none;
+}
+
+.option_wrapper > label {
+   font-weight: lighter;
+   display: inline-block;
+   width: 25em;
+}
+
+.option_wrapper > select {
+   height: 2.5em;
+   width: 10em;
+   cursor: pointer;
+   font-weight: lighter;
+}
+
+.option_wrapper > input {
+   width: calc(10em - 19.2px);
+}
+.option_wrapper > .checkbox {
+   cursor: pointer;
+   scale: 1.5;
+}
+
+.submit_button {
+   display: block;
+   margin: 2em auto auto auto;
+   width: fit-content;
+   text-align: center;
+   padding: 15px;
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+   font-weight: lighter;
+   font-size: 1em;
+   background-color: lightgreen;
+}
+
+.submit_button:hover {
+   cursor: pointer;
+   color: white;
+   outline: 3px solid gray;
+   transition: outline 200ms ease-in-out;
+}

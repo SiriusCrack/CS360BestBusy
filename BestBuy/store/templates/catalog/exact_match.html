@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1 class="product_header">Exact Match</h1>
+<h1 class="uuid_header">Search by UUID</h1>
   <form class="search_bar" method="POST" action="{% url 'exactMatch' %}">
     {% csrf_token %}
     <input type="search" placeholder="Search by UUID" name="search">

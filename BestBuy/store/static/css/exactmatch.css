@@ -1,5 +1,6 @@
-.product_header {
-   margin: 10px;
+.uuid_header {
+   margin: 1em;
+   text-align: center;
 }
 
 .search_bar {
@@ -42,10 +43,6 @@ input:focus {
 button > span {
    scale: 1.5;
    color: grey;
-}
-
-button:hover span {
-   color: white;
 }
 
 .user-search {

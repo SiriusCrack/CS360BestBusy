@@ -1,11 +1,11 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1 class="product_header">Product List</h1>
+  <h1 class="product_header">All Available Products</h1>
   {% if product_list %}
-  <ul>
+  <ul class="product_page_list">
     {% for product in product_list %}
-      <li class="product_item">
+      <li class="product_page_item">
         {{product.displaySize}}" {{product.brand}} {{product.displayType}} {{product.productType}}
       </li>
     {% endfor %}

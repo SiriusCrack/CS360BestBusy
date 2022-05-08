@@ -1,7 +1,13 @@
 .product_header {
+   margin: 1em;
    text-align: center;
 }
 
-.product_item {
+.product_page_list {
    text-align: center;
+   list-style-type: none;
+}
+
+.product_page_item {
+   font-weight: lighter;
 }

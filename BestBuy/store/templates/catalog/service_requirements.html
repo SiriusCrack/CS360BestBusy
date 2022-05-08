@@ -1,5 +1,57 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Service Requirements</h1>
+<h1 class="req_header">Search by Requirements</h1>
+<form class="req_form">
+   <div class="option_wrapper">
+      <label for="brand_id">Brand</label>
+      <select name="brand_id">
+         <option value="0">None</option>
+         <option value="1">Samsung</option>
+         <option value="2">VIZIO</option>
+         <option value="3">Sony</option>
+         <option value="4">LG</option>
+         <option value="5">HiSense</option>
+         <option value="6">RCA</option>
+         <option value="7">Sceptre</option>
+         <option value="8">Toshiba</option>
+         <option value="9">SHARP</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <label for="productType_id">Product Type</label>
+      <select name="productType_id">
+         <option value="0">None</option>
+         <option value="1">TV</option>
+         <option value="2">Monitor</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <label for="displayType_id">Display Type</label>
+      <select name="displayType_id">
+         <option value="0">None</option>
+         <option value="2">OLED</option>
+         <option value="3">CRT</option>
+         <option value="4">TN</option>
+         <option value="5">IPS</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <label for="displaySize">Display Size</label>
+      <input type="number" placeholder="Inches" name="displaySize" min="0"></input>
+   </div>
+   <div class="option_wrapper">
+      <label for="deliveryTime">Delivery Time</label>
+      <input type="number" placeholder="Days" name="deliveryTime" min="0"></input>
+   </div>
+   <div class="option_wrapper">
+      <label for="deliveryCharge">Delivery Charge</label>
+      <input class="checkbox" type="checkbox" name="deliveryTime"></input>
+   </div>
+   <div class="option_wrapper">
+      <label for="price">Price</label>
+      <input type="number" placeholder="USD" name="price" min="0"></input>
+   </div>
+</form>
+<a href="{% url 'index' %}"><button class="submit_button" type="button" name="submitRequirements">Submit</button></a>
 {% endblock %}
