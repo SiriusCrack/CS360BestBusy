@@ -2,8 +2,8 @@
 *.log
 *.pot
 *.pyc
+__pycache__
 BestBuy/store/__pycache__
-# keep db.sqlite3 #
 media
 
 # Backup files # 
