@@ -104,3 +104,7 @@ class ProductListView(generic.ListView):
     model = Product
     context_object_name = 'product_list'
     template_name = 'catalog/product_list.html'
+class ProductDetailView(generic.DetailView):
+    model = Product
+    pk = Product.productID
+    template_name = 'catalog/product_detail.html'

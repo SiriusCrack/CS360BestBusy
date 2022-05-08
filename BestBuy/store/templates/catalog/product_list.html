@@ -6,7 +6,7 @@
   <ul class="product_page_list">
     {% for product in product_list %}
       <li class="product_page_item">
-        {{product}}
+        <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
       </li>
     {% endfor %}
   </ul>
