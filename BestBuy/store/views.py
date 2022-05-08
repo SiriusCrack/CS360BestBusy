@@ -82,15 +82,7 @@ def serviceRequirements(request):
             request,
             'catalog/service_requirements.html',
             {
-                'displaySize':displaySize,
-                'deliveryTime':deliveryTime,
-                'deliveryCharge':deliveryCharge,
-                'price':price,
-                'brand_id':brand_id,
-                'displayType_id':displayType_id,
-                'productType_id':productType_id,
-                'results':results,
-                'stuff':stuff
+                'results':results
             }
         )
     else:
