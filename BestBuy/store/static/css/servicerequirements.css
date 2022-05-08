@@ -29,10 +29,13 @@
    cursor: pointer;
    font-weight: lighter;
    border-radius: 0.5em;
-   border: 2px solid grey; 
+   border: 2px solid grey;
+   background-color: white;
+   color: grey;
 }
 
 .option_wrapper > input {
+   font-weight: lighter;
    width: calc(10em - 19.2px);
 }
 .option_wrapper > .checkbox {
