@@ -33,8 +33,7 @@ def exactMatch(request):
 
 def priorityCriteria(request):
     if request.method == "POST":
-        search = request.POST['search']
-        results = Product.objects.filter(productID=search)
+        results = Product.objects
         return render(
             request, 
             'catalog/exact_match.html', 
@@ -49,6 +48,7 @@ def priorityCriteria(request):
 def serviceRequirements(request):
     if request.method == "POST":
         results = Product.objects
+        hasResults = False
         displaySize = request.POST['displaySize']
         # maxDisplaySize = request.POST['maxDisplaySize']
         deliveryTime = request.POST['deliveryTime']
@@ -60,29 +60,41 @@ def serviceRequirements(request):
         productType_id = request.POST['productType_id']
         if displaySize and (displaySize != 0):
             results = results.filter(displaySize=displaySize)
+            hasResults = True
         # if maxDisplaySize and (maxDisplaySize != 0):
         #     results = results.filter(displaySize__level__lte=maxDisplaySize)
+        #     hasResults = True
         if deliveryTime and (deliveryTime != 0):
             results = results.filter(deliveryTime__level__lte=deliveryTime)
+            hasResults = True
         if (deliveryCharge) and (deliveryCharge != '0'):
             results = results.filter(deliveryCharge=deliveryCharge)
+            hasResults = True
         if price and (price != 0):
             results = results.filter(price=price)
+            hasResults = True
         # if maxPrice and (maxPrice != 9999):
         #     results = results.filter(price__level__lte=maxPrice)
+        #     hasResults = True
         if brand_id and (brand_id != '0'):
             results = results.filter(brand_id=brand_id)
+            hasResults = True
         if displayType_id and (displayType_id != '0'):
             results = results.filter(displayType_id=displayType_id)
+            hasResults = True
         if productType_id and (productType_id != '0'):
             results = results.filter(productType_id=productType_id)
-        return render(
-            request,
-            'catalog/service_requirements.html',
-            {
-                'results':results
-            }
-        )
+            hasResults = True
+        if hasResults:
+            return render(
+                request,
+                'catalog/service_requirements.html',
+                {
+                    'results':results
+                }
+            )
+        else:
+            return render(request, 'catalog/service_requirements.html')
     else:
         return render(request, 'catalog/service_requirements.html')
 
