@@ -49,34 +49,32 @@ def priorityCriteria(request):
 def serviceRequirements(request):
     if request.method == "POST":
         results = Product.objects
-        stuff = "list: "
         displaySize = request.POST['displaySize']
+        # maxDisplaySize = request.POST['maxDisplaySize']
         deliveryTime = request.POST['deliveryTime']
         deliveryCharge = request.POST['deliveryCharge']
         price = request.POST['price']
+        # maxPrice = request.POST['maxPrice']
         brand_id = request.POST['brand_id']
         displayType_id = request.POST['displayType_id']
         productType_id = request.POST['productType_id']
         if displaySize and (displaySize != 0):
-            stuff += "displaySize "
             results = results.filter(displaySize=displaySize)
+        # if maxDisplaySize and (maxDisplaySize != 0):
+        #     results = results.filter(displaySize__level__lte=maxDisplaySize)
         if deliveryTime and (deliveryTime != 0):
-            stuff += "deliveryTime "
-            results = results.filter(deliveryTime=deliveryTime)
+            results = results.filter(deliveryTime__level__lte=deliveryTime)
         if (deliveryCharge) and (deliveryCharge != '0'):
-            stuff += f"deliveryCharge {deliveryCharge} "
             results = results.filter(deliveryCharge=deliveryCharge)
         if price and (price != 0):
-            stuff += "price "
             results = results.filter(price=price)
+        # if maxPrice and (maxPrice != 9999):
+        #     results = results.filter(price__level__lte=maxPrice)
         if brand_id and (brand_id != '0'):
-            stuff += "brand_id "
             results = results.filter(brand_id=brand_id)
         if displayType_id and (displayType_id != '0'):
-            stuff += "displayType_id "
             results = results.filter(displayType_id=displayType_id)
         if productType_id and (productType_id != '0'):
-            stuff += "productType_id "
             results = results.filter(productType_id=productType_id)
         return render(
             request,
