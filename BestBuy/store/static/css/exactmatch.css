@@ -36,8 +36,12 @@ input:focus {
 }
 
 .search_bar > button:hover {
-   height: 35.6px;
-   outline: 2px solid grey;
+   outline: 3px solid grey;
+   transition: outline 250ms ease-in-out;
+}
+
+.search_bar > button:hover span {
+   color: white;
 }
 
 button > span {
