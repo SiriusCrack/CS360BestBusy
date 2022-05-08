@@ -28,6 +28,8 @@
    width: 10em;
    cursor: pointer;
    font-weight: lighter;
+   border-radius: 0.5em;
+   border: 2px solid grey; 
 }
 
 .option_wrapper > input {
