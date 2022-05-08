@@ -32,7 +32,19 @@ def exactMatch(request):
         return render(request, 'catalog/exact_match.html')
 
 def priorityCriteria(request):
-    return render(request, 'catalog/priority_criteria.html')
+    if request.method == "POST":
+        search = request.POST['search']
+        results = Product.objects.filter(productID=search)
+        return render(
+            request, 
+            'catalog/exact_match.html', 
+            {
+                'search':search,
+                'results':results
+            }
+        )
+    else:
+        return render(request, 'catalog/exact_match.html')
 
 def serviceRequirements(request):
     if request.method == "POST":
@@ -73,7 +85,6 @@ def serviceRequirements(request):
             }
         )
     else:
-        # search page
         return render(request, 'catalog/service_requirements.html')
 
 from django.views import generic
