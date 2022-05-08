@@ -2,7 +2,8 @@
 
 {% block content %}
 <h1 class="req_header">Search by Requirements</h1>
-<form class="req_form">
+<form class="req_form" method="POST" action="{% url 'serviceReq' %}">
+   {% csrf_token %}
    <div class="option_wrapper">
       <label for="brand_id">Brand</label>
       <select name="brand_id">
@@ -46,12 +47,16 @@
    </div>
    <div class="option_wrapper">
       <label for="deliveryCharge">Delivery Charge</label>
-      <input class="checkbox" type="checkbox" name="deliveryTime"></input>
+      <select name="deliveryCharge">
+         <option value="0">None</option>
+         <option value="true">True</option>
+         <option value="false">False</option>
+      </select>
    </div>
    <div class="option_wrapper">
       <label for="price">Price</label>
       <input type="number" placeholder="USD" name="price" min="0"></input>
    </div>
+   <button class="submit_button" type="submit" name="submitRequirements">Submit</button>
 </form>
-<a href="{% url 'index' %}"><button class="submit_button" type="button" name="submitRequirements">Submit</button></a>
 {% endblock %}
