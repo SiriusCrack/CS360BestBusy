@@ -1,16 +1,17 @@
 # Fdb version 3
-["biber template"] 1651984764 "template.bcf" "template.bbl" "template" 1651984764
-  "template.bcf" 1651984764 107251 3053a21fc265fbb588dd159163b353fb "pdflatex"
+["biber template"] 1652051157 "template.bcf" "template.bbl" "template" 1652051157
+  "template.bcf" 1652051157 107160 120dad207b4b2413ac1db724fd58d0ff "pdflatex"
   (generated)
   "template.bbl"
   "template.blg"
-["pdflatex"] 1651984764 "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" "template.pdf" "template" 1651984764
-  "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" 1647811626 8045 f12ad5ab72cbdf19878c4c439c611f55 ""
+["pdflatex"] 1652051156 "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" "template.pdf" "template" 1652051156
+  "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" 1652051155 8429 79201b4804e8cc5a1630d73fa9ea59b7 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc" 1647808283 3163 21e525d33df21a14ca1957bee2a40288 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/xcharter/xch_ttjfqt.enc" 1647808283 3042 89ca0791973606a1e548c92a615cb3e0 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc" 1647808283 3636 d01545aefb566252883ecd2da6792d5e ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1647844622 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1647844622 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1647844622 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1647844622 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm" 1647808283 760 e8ec875a87aa119f1af7ea4be48da9e8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm" 1647808283 1772 c3eb2dc3ad7612f6f7ffa1b18d45b0b9 ""
   "/usr/share/texmf-dist/fonts/tfm/public/newtx/ntxsy.tfm" 1647808283 2000 33f20474c9fe1489d6907a37300dec5a ""
@@ -75,7 +76,7 @@
   "/usr/share/texmf-dist/tex/latex/base/fontenc.sty" 1647844622 4946 461cc78f6f26901410d9f1d725079cc6 ""
   "/usr/share/texmf-dist/tex/latex/base/ifthen.sty" 1647844622 5157 f308c7c04889e16c588e78aa42599fae ""
   "/usr/share/texmf-dist/tex/latex/base/inputenc.sty" 1647844622 5049 969aec05d5f39c43f8005910498fcf90 ""
-  "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1647844622 8448 96f18c76bf608a36ee6fbf021ac1dd32 ""
+  "/usr/share/texmf-dist/tex/latex/base/size11.clo" 1647844622 8464 74db94825c407b51399ca17d9bd38a3d ""
   "/usr/share/texmf-dist/tex/latex/base/textcomp.sty" 1647844622 2894 55431114fc0e491ecee275edafd6c881 ""
   "/usr/share/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx" 1647806049 8024 f170876981d3e1db9ed0abd5abc62dbe ""
   "/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx" 1647806049 25680 409c3f3d570418bc545e8065bebd0688 ""
@@ -137,10 +138,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1651976213 2924507 1033d26e7121040035e6f5210c53d96c ""
   "CSUniSchoolLabReport.cls" 1647811874 3245 185f090bdc75b01a6a3d48410d901fb3 ""
   "Figures//placeholder.jpg" 1359957095 20279 2c3b3984e263aa5f7146ef59d3f89f8c ""
-  "template.aux" 1651984764 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "template.aux" 1652051156 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   "template.bbl" 0 -1 0 "biber template"
   "template.run.xml" 0 -1 0 "pdflatex"
-  "template.tex" 1647811626 8045 f12ad5ab72cbdf19878c4c439c611f55 ""
+  "template.tex" 1652051155 8429 79201b4804e8cc5a1630d73fa9ea59b7 ""
   (generated)
   "template.aux"
   "template.bcf"
