@@ -31,6 +31,12 @@ def exactMatch(request):
     else:
         return render(request, 'catalog/exact_match.html')
 
+def priorityCriteria(request):
+    return render(request, 'catalog/priority_criteria.html')
+
+def serviceRequirements(request):
+    return render(request, 'catalog/service_requirements.html')
+
 from django.views import generic
 
 class ProductListView(generic.ListView):

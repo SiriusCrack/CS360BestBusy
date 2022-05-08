@@ -12,9 +12,9 @@
       Searching for:&#160;<i>{{ search }}</i>
     </div> 
     {% for product in results %}
-      <li class="product_item">
-        {{product}}
-      </li>
+      <ul class="product_item">
+        <a href="">{{product}}</a>
+      </ul>
     {% endfor %}
   {% endif %}
 {% endblock %}
