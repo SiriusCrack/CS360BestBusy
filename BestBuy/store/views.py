@@ -35,7 +35,46 @@ def priorityCriteria(request):
     return render(request, 'catalog/priority_criteria.html')
 
 def serviceRequirements(request):
-    return render(request, 'catalog/service_requirements.html')
+    if request.method == "POST":
+        results = Product.objects
+        displaySize = request.POST['displaySize']
+        deliveryTime = request.POST['deliveryTime']
+        deliveryCharge = request.POST['deliveryCharge']
+        price = request.POST['price']
+        brand_id = request.POST['brand_id']
+        displayType_id = request.POST['displayType_id']
+        productType_id = request.POST['productType_id']
+        if displaySize:
+            results.filter(displaySize=displaySize)
+        if deliveryTime:
+            results.filter(displaySize=deliveryTime)
+        if deliveryCharge:
+            results.filter(displaySize=deliveryCharge)
+        if price:
+            results.filter(displaySize=price)
+        if brand_id:
+            results.filter(displaySize=brand_id)
+        if displayType_id:
+            results.filter(displaySize=displayType_id)
+        if productType_id:
+            results.filter(displaySize=productType_id)
+        return render(
+            request,
+            'catalog/service_requirements.html',
+            {
+                'displaySize':displaySize,
+                'deliveryTime':deliveryTime,
+                'deliveryCharge':deliveryCharge,
+                'price':price,
+                'brand_id':brand_id,
+                'displayType_id':displayType_id,
+                'productType_id':productType_id,
+                'results':results
+            }
+        )
+    else:
+        # search page
+        return render(request, 'catalog/service_requirements.html')
 
 from django.views import generic
 
