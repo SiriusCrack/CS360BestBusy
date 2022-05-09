@@ -52,9 +52,9 @@
    <div class="option_wrapper">
       <label for="deliveryCharge">Delivery Charge</label>
       <select name="deliveryCharge">
-         <option value="0">None</option>
-         <option value="True">Yes</option>
-         <option value="False">No</option>
+         <option value="none">None</option>
+         <option value="yes">Yes</option>
+         <option value="no">No</option>
       </select>
    </div>
    <div class="option_wrapper">
@@ -67,7 +67,7 @@
    <div class="user-search">Results:</div> 
    {% for product in results %}
       <ul class="product_item">
-         <a href="">{{product}}</a>
+         <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
       </ul>
    {% endfor %}
 {% endif %}
