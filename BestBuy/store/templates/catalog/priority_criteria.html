@@ -2,8 +2,8 @@
 
 {% block content %}
 <h1 class="req_header">Search by Feature</h1>
-<h5 style="text-align: center; font-weight: normal;">Please indicate search priority level next to the feature* (Can leave some blank)</h5> 
-<form class="req_form" method="POST" action="{% url 'serviceReq' %}">
+<h5 style="text-align: center; font-weight: normal; margin-bottom: 3em;">Please indicate search priority level next to the feature* (Can leave some blank)</h5> 
+<form class="req_form" method="POST" action="{% url 'priorityCrit' %}">
    {% csrf_token %}
    <div class="option_wrapper">
       <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityBrand"></input>
@@ -71,14 +71,15 @@
    </div>
    <button class="submit_button" type="submit" name="submitRequirements">Submit</button>
 </form>
-{% if results %}
+{% if results and hasResults %}
    <div class="user-search" style="margin-bottom: 1em;">Results:</div> 
-   {% for product in results %}
-      <ul class="product_item">
-         <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
-      </ul>
-   {% endfor %}
-   {% else %}
-      <p style="margin: 1em; text-align: center;">Current query found no products in the library.</p>
+      {% for product in results %}
+         <ul class="product_item">
+            <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
+         </ul>
+      {% endfor %}
+{% endif %}
+{% if results and not hasResults %}
+   <p style="margin: 1em; text-align: center;">Current query found no products in the library.</p>
 {% endif %}
 {% endblock %}
