@@ -3,13 +3,11 @@
 {% block content %}
   <h1 class="product_header">All Available Products</h1>
   {% if product_list %}
-  <ul class="product_page_list">
-    {% for product in product_list %}
-      <li class="product_page_item">
+  {% for product in product_list %}
+    <ul class="product_item">
         <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
-      </li>
+    </ul>
     {% endfor %}
-  </ul>
   {% else %}
     <p>There are no products in the library.</p>
   {% endif %}
