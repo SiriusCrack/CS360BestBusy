@@ -9,7 +9,7 @@
 
 \setcopyright{acmcopyright}
 \copyrightyear{2018}
-\acmYear{2018}
+\acmYear{2022}
 \acmDOI{10.1145/1122445.1122456}
 
 \acmConference[CIKM '22]{CIKM '22: 31st ACM International Conference on Information and Knowledge Management}{Oct 17--22, 2022}{Atlanta, Georgia, USA}
@@ -161,26 +161,28 @@ We set out to apply Database Structure concepts in the practical setting of buil
 
 \maketitle
 
+\pagebreak
 \section{Development Tools}
-
-The following are technical descriptions of the various tools that were utilized in the development of this project
+Many different development tools were utilized in the development of this web page. Each development tool listed here contributed massively to the development's workflow and our productivity in the project development. Missing any one of these tools would have massively altered the development process for this website.
 
 \subsection{VSCode}
 We both made heavy use of VSCode, a popular, fully featured, heavily-extensible text editor designed for a wide range of programming situations. The most obvious feature utilized was VSCode's syntax highlighting and auto-completion. The program scrapes your project's files, imported packages, and relevant classes, and provides context-aware auto completion suggests, or highlights relevant variables. The program also features many productivity-increasing text-editing features, such as split view windows, auto and bulk indentation, multi-line editing, and much more. Another huge source of functionality is VSCode's extensibility. Through first party and community extensions, nearly endless functionality can be added to VSCode's application, such as in-app git control, LaTeX editing, viewing, and building, and more to be covered in the following subsections.
 
 \subsection{git Version Control}
-The version control software git allows developers to track changes made to their software verbosely, robustly, and indefinitely. Every time me made a change or added a feature to our app, we recorded the changes as well as a message describing the change using git. In doing so, git allowed us keep close track of the progress of our development, and exactly what changes where made when. It also allowed very simple reversion to previous changes, when the situation arose.
+The version control software git allows developers to track changes made to their software verbosely, robustly, and indefinitely. Every time me made a change or added a feature to our app, we recorded the changes as well as a message describing the change using git. In doing so, git allowed us to keep close track of the progress of our development, and exactly what changes where made when. It also allowed very simple reversion to previous changes, when the situation arose.
 
-\subsection{Github Collaboration Service}
-Not entirely separate from git, but a service all on it's own, is Github. Github's git repository functionality allowed us to combine git's version control features with a remote repository, allowing us to develop the project on two separate machines, at two separate locations. Whenever a change is tracked with git, it must be stored in the Github repository to truly be tracked. Once this is done, the repository acts as an intermediary between us, managing our changes to the code and the times they were made, keeping track in order to merge our changes and share them between us. 
+\subsection{GitHub Collaboration Service}
+Not entirely separate from git, but a service all on it's own, is Github. GitHub's git repository functionality allowed us to combine Git's version control features with a remote repository, allowing us to develop the project on two separate machines, at two separate locations. Whenever a change is tracked with git, it must be stored in the Github repository to truly be tracked. Once this is done, the repository acts as an intermediary between us, managing our changes to the code and the times they were made, keeping track in order to merge our changes and share them between us. 
 
+\pagebreak
 \subsection{Discord Communication Service}
-Almost all of our communication was done over the Discord communication app. Having an easily accessible go-to method for communication is a necessity for any collaborative work. Discord's ability to communicate via text, speak over voice calls, share files, and even share real-time code manipulation was all essential to our ciollaborative development.
+Almost all of our communication was done over the Discord communication app. Having an easily accessible go-to method for communication is a necessity for any collaborative work. Discord's ability to communicate via text, speak over voice calls, share files, and even share real-time code manipulation was all essential to our collaborative development.
 
 \subsection{VSCode Database Viewer}
-As mentioned previously, VSCode offers a plethora of extensions to enhance its featureset. One such extension is any of several database viewer extensions. These extensions allowed easy, simple, real-time viewing of our application's database, as well as the database's structure and datatypes of every field.
+As mentioned previously, VSCode offers a plethora of extensions to enhance its feature-set. One such extension is any of several database viewer extensions. These extensions allowed easy, simple, real-time viewing of our application's database, as well as the database's structure and data types of every field.
 
 \subsection{dbdiagram.io Database Diagram Builder}
+This website allows designing of relational database models through clear and easy to follow pseudo-code. By simply following the provided example code and changing the values, the site automatically generates an intractable image representation of your database. The website also allows exporting of the generated image with little to no extra hassle, only requiring a watermark on the final image, as can be seen later in this paper.
 
 \subsection{Django Development Server}
 In the use of the Django Web Framework, our app and website can be locally hosted from our own machines. This enables us live feedback for any changes we make on multiple axes. This is only possible if we first host a Django virtual environment. The purpose of a virtual environment is quite tactful as it prevents permanent errors from blooming and the ability to manipulate the state machine in anyway without affecting one's machine or static environment. In addition, a benefit of this is the detailed error pages generated by Django for the back-end and its error-handling.
@@ -191,6 +193,7 @@ The following are technical descriptions of the programming languages this proje
 \subsection{Python}
 The Django Web Framework utilizes the Python language for all of its back-end development and implementation. We used Python version 3.8.10. Python proved to be straightforward to learn and to utilize as the syntax is very light and the libraries are easy to use. The only downside in using Python is its performance, but our project didn't seem to experience such issues.
 
+\pagebreak
 \subsection{SQL}
 Our project utilized the SQLite3 framework for the data base implementation. This framework proved the most effective and reliable for our project for it is lightweight and functions quite well in Python and Unix environments.
 
@@ -202,7 +205,6 @@ The latest version of CSS is responsible for graphical styling and the creation 
 
 
 \section{Development}\label{development}
-%good
 The development process was very simply structured into three rather distinct parts. First, there was the design of the database that would be running under the hood of our website. Then, there was the development of the website, which would be separated pretty cleanly between the back-end development, working with Django's various functions and features, and the front-end development, working with the HTML, CSS, and Django's templating features. We both worked together on the design of the database. Morgan primarily focused with Django's functions, while Ian worked with Django's HTML templating system and the website's front-end.
 
 \subsection{Database Design}\label{database}
@@ -210,12 +212,13 @@ The development process was very simply structured into three rather distinct pa
 Our database design was relatively simple with how many tutorials there were online for similar websites. We followed Mozilla's tutorial for building a website for a library using Django, and it's database design mapped pretty well to ours. \par
 All products are contained in the Product table. Each product has its own unique UUID, a 36 character uniquely-generated identifying string, with a special datatype built into Django. This serves as the table's primary key. \par
 Within the Product table are several one-to-one foreign key relationships for the various features available. These are each stored in tables which simply contain an iterating id primary key and the name for the relevant feature. Doing this allowed us to make querying matching products very simple. \par
+\pagebreak
 Aside from this there are several less important fields which are simply stored as their own relevant variables within the table itself. This allowed for more flexibility in storage, though it did make querying them a bit more involved. \par
 We then used Mockaroo to generate data matching the tables and populate our database.
 
 \begin{figure} [H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.47\textwidth]{Figures/databaseRelations} % Include the figure
+	\includegraphics[width=0.48\textwidth]{Figures/databaseRelations} % Include the figure
 	\caption{Relational database diagram for Best Buy website}
 \end{figure}
 
@@ -227,6 +230,7 @@ Much of our time spent on the project was learning how to work with Django's vas
 	\item[models.py] \hfill \\
 	Rather than working with any particular database system directly, Django abstracts this work with its models feature. Using conventions defined by Django, the developer can design their database using more abstract database design concepts more directly. Tables are defined as classes, with variables belonging to that class being treated as forms within that table. These variables are extremely extensible through Django's documentation, allowing the developer to do this such as: defining the primary key, linking another table as a foreign key, defining the forms data types (such as integers, bools, dates, or times), or even automatically generating standardized UUIDs (universally unique identifiers) salted through your MAC address, namespace hashes, or a plethora of other methods at the developer's choosing. \par
 	Once these models are implemented, Django handles building and modifying them on its own, regardless of the database one chooses. Switching databases is as simple as modifying a settings file and possibly installing the Django package for its support. Often, depending on the previous database implementation, data migration between databases is as simple as a Django command.
+\pagebreak
 	\item[views.py] \hfill \\
 	Paired with Django's models feature is the views feature. This allows the developer to define variables and functions, take GET and POST calls, manipulate both and pass the results to the generated HTML page. Along with all the functionality for creating dynamic web pages this allows by simply effectively extending HTML with Python and everything that offers, a particularly important feature is Django's object.filter() function. This effectively abstracts SQL queries from the previously defined models to more python friendly if statements and equality operators. \par
 	The process for dynamic web page deployment in essence becomes: deliver a web pages data with python, return any data through HTML POST, retrieve that data from models using python, and deliver the new web page with python.
@@ -242,6 +246,7 @@ Our project aimed to delivery visual simplicity alongside effective functionalit
 %move
 Django bundles with it its own entirely self-contained development server. While this is primarily intended for development on a local machine, and while the practice does not necessarily follow best security practices, the development server is entirely extensible through only a few settings changes. For out particular project, we are simply using a domain Morgan happened to already own. Using Google Site's interactive settings, we simply pointed the desired subdomain to a specific port, forwarded that port on the development machine's local network, and the website is now fully accessible whenever the development server is running.
 
+\pagebreak
 \subsection{HTML Templates}\label{templates}
 In our use of the Django web framework, we utilized the provided basic/generic web page. Here, we included all of our style sheets and other various "head" data and information. A stylistic and functional navigation bar was added to this page so that it would be present for all other pages that extend from it. Here on, we created the rest of the necessary pages our project would need and had them extend from our basic/generic. Each had their own style sheet loaded statically from the page as well. This structure worked most effectively and allowed the front-end development much more seamless and organized.
 
@@ -256,17 +261,18 @@ For each brand or make of product available, an entry is stored in this table, a
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
     \centering
-	\includegraphics[width=0.5\textwidth]{Figures/brands.png} % Include the figure
+	\includegraphics[width=0.48\textwidth]{Figures/brands.png} % Include the figure
 	\caption{Picture of the Brands table.}
 \end{figure}
 
+\pagebreak
 \subsection{Product Types}
 Like the Brand table, the Product Types table contains only an automatic iterating ID integer as its primary key and a variable character field as its name. \par
 This table contains an entry for every type of product available in the store. Like the brands, the product table may contain a one-to-one foreign key referencing a particular type of product in this table.
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/producttype.png} % Include the figure
+	\includegraphics[width=0.4\textwidth]{Figures/producttype.png} % Include the figure
 	\caption{Picture of the Product Type table.}
 \end{figure}
 
@@ -276,10 +282,11 @@ Each entry in this table represents a different type of display technology avail
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/displaytypes.png} % Include the figure
+	\includegraphics[width=0.45\textwidth]{Figures/displaytypes.png} % Include the figure
 	\caption{Picture of the Display Type table.}
 \end{figure}
 
+\pagebreak
 \subsection{Products}
 Our products table is where the bulk of the information is stored. For each product available in the website, there is an entry on this table. \par
 Each entry contains a unique UUID (Universally Unique Identifier) acting is the entry's primary key. The UUID is a special 36bit Django data field, automatically generated at instantiation whenever a product is added to the table. \par
@@ -289,7 +296,7 @@ The other fields of the product table contain more specific information on a giv
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/product.png} % Include the figure
+	\includegraphics[width=0.48\textwidth]{Figures/product.png} % Include the figure
 	\caption{Picture of the Product table.}
 \end{figure}
 
@@ -297,6 +304,7 @@ The other fields of the product table contain more specific information on a giv
 
 Mockaroo is a website service that provides the user the ability to create mock data in various formats for a database. Our project utilizes and is dependent on mock data for the functionality of the database as a whole. We had it so multiple columns would be present to function as characteristics or features of a product and the values of each would vary and generate randomly.
 
+\pagebreak
 \section{Functionality}\label{functionality}
 %walk through using each page like a baby. then talk about how the html is laid out, followed by how view is laid out
 The following sections will describe the front-end implementations and the back-end implementations of each page.
@@ -308,7 +316,7 @@ These buttons feature Django HTML Template function calls which automatically ha
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/index.png} % Include the figure
+	\includegraphics[width=0.48\textwidth]{Figures/index.png} % Include the figure
 	\caption{Picture of the home page.}
 \end{figure}
 
@@ -318,7 +326,7 @@ A set of objects is defined within the corresponding python view function. The H
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/allproducts.png} % Include the figure
+	\includegraphics[width=0.48\textwidth]{Figures/allproducts.png} % Include the figure
 	\caption{Picture of the product page.}
 \end{figure}
 
@@ -328,10 +336,11 @@ The UUID is simply passed back to the view, this time through a POST call contai
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/exactmatch.png} % Include the figure
+	\includegraphics[width=0.48\textwidth]{Figures/exactmatch.png} % Include the figure
 	\caption{Picture of the UUID page.}
 \end{figure}
 
+\pagebreak
 \subsection{Best Match}\label{best}
 The front-end functionality of this web page is quite dense and rigidly organized. It can be characterized into eight sections or input fields.
 Four of which are drop-down menus and the rest are input text boxes. Each section is labeled by the feature or characteristic of the product that's to be searched. Furthermore, before each section label are small input boxes with a range of one to eight responsible for dictating the priority of each feature. There is a submit button to send this data to the back-end. \par
@@ -339,19 +348,24 @@ Due to the unique nature of this feature, the back-end functionality is quite co
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/bestmatch.png} % Include the figure
+	\includegraphics[width=0.47\textwidth]{Figures/bestmatch.png} % Include the figure
 	\caption{Picture of the best match page.}
 \end{figure}
 
+\pagebreak
 \subsection{by Feature}\label{feature}
 The front-end functionality of this web page is very much similar to that of the 'Best Match' page but the back-end functionality is quite different. There are the eight sections alongside their feature labels and accompanying input types. There is no priority input in this criterion for the features. There is a submit button to send this data to the back-end. \par
 On the back-end this feature works very similarly to the Best Match search. Depending on the criteria selected, database queries are chained one after the other, shrinking the pool of results for every criteria. No special data processing is needed, however, as there is no dynamic priority tied to each search criteria, and the queries can simply be chained one after another with no regard for order.
 
 \begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
 	\centering % Horizontally center the figure
-	\includegraphics[width=0.5\textwidth]{Figures/requirements.png} % Include the figure
+	\includegraphics[width=0.47\textwidth]{Figures/requirements.png} % Include the figure
 	\caption{Picture of the feature page.}
 \end{figure}
+
+\pagebreak
+\section{Conclusion and Future Improvements}
+In conclusion, we both found this project to be quite challenging but meaningful. This was our first real exposure to front-end and back-end development. To be thrown into such a project and to learn all these different things certainly made us more acknowledged to the functionality behind the Internet and data basing. We found that making a mock online store was an effective strategy and goal for our level of expertise. We are satisfied with what we managed to develop, though we would make some changes were we to do it again. First off, although we enjoyed learning Django, we would consider a web framework utilizing JavaScript, particularly Vue.js because we find that it might suit us better. Furthermore, we would likely flesh out and redo our relational models of our data base to add even more normalization and attributes. In terms of the website design, we would most certainly try to improve on the look and make it more modernized. In short, future improvements can be made, so far as to changing the framework, but what we managed to create looks clean and functions accordingly.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{sample-base}
