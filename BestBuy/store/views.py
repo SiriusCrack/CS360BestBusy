@@ -57,6 +57,7 @@ def priorityCriteria(request):
         hasResults = False
         for term in searchList:
             newResults = results
+            print(term)
             if term == 'minDisplaySize':
                 if searchDict[term] and (searchDict[term] != 0):
                     newResults = newResults.filter(displaySize__gte=searchDict[term])
@@ -84,13 +85,19 @@ def priorityCriteria(request):
                     hasResults = True
             if term == 'displayType_id':
                 if searchDict[term] and (searchDict[term] != '0'):
+                    print(searchDict[term])
                     newResults = newResults.filter(displayType_id=searchDict[term])
+                    hasResults = True
+            if term == 'productType_id':
+                if searchDict[term] and (searchDict[term] != '0'):
+                    print(type(searchDict[term]))
+                    newResults = results.filter(productType_id=searchDict[term])
                     hasResults = True
             if newResults:
                 results = newResults
             else:
                 break
-        if hasResults:
+        if hasResults and results:
             return render(
                 request,
                 'catalog/priority_criteria.html',
@@ -100,6 +107,7 @@ def priorityCriteria(request):
                 }
             )
         else:
+            hasResults = False
             return render(request, 'catalog/priority_criteria.html', {'hasResults':hasResults})
     else:
         return render(request, 'catalog/priority_criteria.html')
