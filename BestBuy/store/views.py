@@ -58,19 +58,16 @@ def serviceRequirements(request):
         displayType_id = request.POST['displayType_id']
         productType_id = request.POST['productType_id']
         if minDisplaySize and (minDisplaySize != 0):
-            results = results.filter(displaySize=displaySize)
+            results = results.filter(displaySize__gte=minDisplaySize)
             hasResults = True
         if maxDisplaySize and (maxDisplaySize != 0):
-            results = results.filter(displaySize__level__lte=maxDisplaySize)
+            results = results.filter(displaySize__lte=maxDisplaySize)
             hasResults = True
         if deliveryTime and (deliveryTime != 0):
             results = results.filter(deliveryTime__lte=deliveryTime)
             hasResults = True
         if deliveryCharge and (deliveryCharge != 'none'):
-            if deliveryCharge == 'yes':
-                results = results.filter(deliveryCharge=True)
-                hasResults = True
-            elif deliveryCharge == 'no':
+            if deliveryCharge == 'no':
                 results = results.filter(deliveryCharge=False)
                 hasResults = True
         if price and (price != 0):
