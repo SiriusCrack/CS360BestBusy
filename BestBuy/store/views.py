@@ -87,11 +87,12 @@ def serviceRequirements(request):
                 request,
                 'catalog/service_requirements.html',
                 {
-                    'results':results
+                    'results':results,
+                    'hasResults':hasResults
                 }
             )
         else:
-            return render(request, 'catalog/service_requirements.html')
+            return render(request, 'catalog/service_requirements.html', {'hasResults':hasResults})
     else:
         return render(request, 'catalog/service_requirements.html')
 
