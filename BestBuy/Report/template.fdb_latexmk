@@ -4,8 +4,8 @@
   (generated)
   "template.bbl"
   "template.blg"
-["pdflatex"] 1652074680 "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" "template.pdf" "template" 1652074680
-  "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" 1652074679 9093 2c93a166263413e2019627a0d8ad3167 ""
+["pdflatex"] 1652075263 "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" "template.pdf" "template" 1652075263
+  "/home/morgan/Programming/virtualenvwrapper/Django/Apps/CS360BestBuy/BestBuy/Report/template.tex" 1652075263 9415 a9edac44e1c5455080b369ec3365778c ""
   "/usr/share/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc" 1647808283 3163 21e525d33df21a14ca1957bee2a40288 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/xcharter/xch_ttjfqt.enc" 1647808283 3042 89ca0791973606a1e548c92a615cb3e0 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc" 1647808283 3636 d01545aefb566252883ecd2da6792d5e ""
@@ -138,10 +138,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1651976213 2924507 1033d26e7121040035e6f5210c53d96c ""
   "CSUniSchoolLabReport.cls" 1647811874 3245 185f090bdc75b01a6a3d48410d901fb3 ""
   "Figures//placeholder.jpg" 1359957095 20279 2c3b3984e263aa5f7146ef59d3f89f8c ""
-  "template.aux" 1652074680 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "template.aux" 1652075263 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   "template.bbl" 0 -1 0 "biber template"
   "template.run.xml" 0 -1 0 "pdflatex"
-  "template.tex" 1652074679 9093 2c93a166263413e2019627a0d8ad3167 ""
+  "template.tex" 1652075263 9415 a9edac44e1c5455080b369ec3365778c ""
   (generated)
   "template.aux"
   "template.bcf"
