@@ -49,33 +49,33 @@ def serviceRequirements(request):
     if request.method == "POST":
         results = Product.objects
         hasResults = False
-        displaySize = request.POST['displaySize']
-        # maxDisplaySize = request.POST['maxDisplaySize']
+        minDisplaySize = request.POST['minDisplaySize']
+        maxDisplaySize = request.POST['maxDisplaySize']
         deliveryTime = request.POST['deliveryTime']
         deliveryCharge = request.POST['deliveryCharge']
         price = request.POST['price']
-        # maxPrice = request.POST['maxPrice']
         brand_id = request.POST['brand_id']
         displayType_id = request.POST['displayType_id']
         productType_id = request.POST['productType_id']
-        if displaySize and (displaySize != 0):
+        if minDisplaySize and (minDisplaySize != 0):
             results = results.filter(displaySize=displaySize)
             hasResults = True
-        # if maxDisplaySize and (maxDisplaySize != 0):
-        #     results = results.filter(displaySize__level__lte=maxDisplaySize)
-        #     hasResults = True
+        if maxDisplaySize and (maxDisplaySize != 0):
+            results = results.filter(displaySize__level__lte=maxDisplaySize)
+            hasResults = True
         if deliveryTime and (deliveryTime != 0):
-            results = results.filter(deliveryTime__level__lte=deliveryTime)
+            results = results.filter(deliveryTime__lte=deliveryTime)
             hasResults = True
-        if (deliveryCharge) and (deliveryCharge != '0'):
-            results = results.filter(deliveryCharge=deliveryCharge)
-            hasResults = True
+        if deliveryCharge and (deliveryCharge != 'none'):
+            if deliveryCharge == 'yes':
+                results = results.filter(deliveryCharge=True)
+                hasResults = True
+            elif deliveryCharge == 'no':
+                results = results.filter(deliveryCharge=False)
+                hasResults = True
         if price and (price != 0):
-            results = results.filter(price=price)
+            results = results.filter(price__lte=price)
             hasResults = True
-        # if maxPrice and (maxPrice != 9999):
-        #     results = results.filter(price__level__lte=maxPrice)
-        #     hasResults = True
         if brand_id and (brand_id != '0'):
             results = results.filter(brand_id=brand_id)
             hasResults = True
