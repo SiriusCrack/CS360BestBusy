@@ -1,12 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <ul class="product_page_item">
-    {{product.displaySize}}"<br> 
-    {{product.brand}}<br>
-    {{product.displayType}}<br>
-    {{product.productType}}<br>
-    {{product.productType}}<br>
-    {{product.productID}}<br>
-  </ul>
+<h1 class="product_header">Product Details</h1>
+<div class="detail-wrapper">
+  <ul class="detail-item">Entire Name: {{product.displaySize}} {{product.brand}} {{product.displayType}} {{product.productType}}"</ul>
+  <ul class="detail-item">Display Size: {{product.displaySize}}"</ul>
+  <ul class="detail-item">Brands: {{product.brand}}</ul>
+  <ul class="detail-item">Display Type: {{product.displayType}}</ul>
+  <ul class="detail-item">Product Type: {{product.productType}}</ul>
+  <ul class="detail-item">UUID: {{product.productID}}</ul>
+</div>
 {% endblock %}

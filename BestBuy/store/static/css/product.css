@@ -19,3 +19,14 @@
 .product_page_item > a:hover {
    color: grey;
 }
+
+.detail-wrapper {
+   width: fit-content;
+   margin: auto;
+   padding: 1em;
+}
+
+.detail-item {
+   font-weight: lighter;
+   text-align: left;
+}
