@@ -69,7 +69,8 @@
             <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
          </ul>
       {% endfor %}
-{% elif not hasResults %}
+{% endif %}
+{% if results and not hasResults %}
    <p style="margin: 1em; text-align: center;">Current query found no products in the library.</p>
 {% endif %}
 {% endblock %}
