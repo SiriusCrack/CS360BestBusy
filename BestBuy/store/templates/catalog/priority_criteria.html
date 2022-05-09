@@ -1,5 +1,84 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Priority Criteria</h1>
+<h1 class="req_header">Search by Feature</h1>
+<h5 style="text-align: center; font-weight: normal;">Please indicate search priority level next to the feature* (Can leave some blank)</h5> 
+<form class="req_form" method="POST" action="{% url 'serviceReq' %}">
+   {% csrf_token %}
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityBrand"></input>
+      <label for="brand_id">Brand</label>
+      <select name="brand_id">
+         <option value="0">None</option>
+         <option value="1">Samsung</option>
+         <option value="2">VIZIO</option>
+         <option value="3">Sony</option>
+         <option value="4">LG</option>
+         <option value="5">HiSense</option>
+         <option value="6">RCA</option>
+         <option value="7">Sceptre</option>
+         <option value="8">Toshiba</option>
+         <option value="9">SHARP</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityType"></input>
+      <label for="productType_id">Product Type</label>
+      <select name="productType_id">
+         <option value="0">None</option>
+         <option value="1">TV</option>
+         <option value="2">Monitor</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityDisplay"></input>
+      <label for="displayType_id">Display Type</label>
+      <select name="displayType_id">
+         <option value="0">None</option>
+         <option value="2">OLED</option>
+         <option value="3">CRT</option>
+         <option value="4">TN</option>
+         <option value="5">IPS</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityMinSize"></input>
+      <label for="minDisplaySize">Minimum Display Size</label>
+      <input class="main-input" type="number" placeholder="Inches" name="minDisplaySize" min="0"></input>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityMaxSize"></input>
+      <label for="maxDisplaySize">Maximum Display Size</label>
+      <input class="main-input" type="number" placeholder="Inches" name="maxDisplaySize" min="0"></input>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityDelivery"></input>
+      <label for="deliveryTime">Maximum Delivery Time</label>
+      <input class="main-input" type="number" placeholder="Days" name="deliveryTime" min="0"></input>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityCharge"></input>
+      <label for="deliveryCharge">Delivery Charge</label>
+      <select name="deliveryCharge">
+         <option value="none">No</option>
+         <option value="no">Yes</option>
+      </select>
+   </div>
+   <div class="option_wrapper">
+      <input class="p-input" placeholder="*" type="number" min="0" max="9" name="priorityPrice"></input>
+      <label for="price">Price Limit</label>
+      <input class="main-input" type="number" placeholder="USD" name="price" min="0"></input>
+   </div>
+   <button class="submit_button" type="submit" name="submitRequirements">Submit</button>
+</form>
+{% if results %}
+   <div class="user-search" style="margin-bottom: 1em;">Results:</div> 
+   {% for product in results %}
+      <ul class="product_item">
+         <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
+      </ul>
+   {% endfor %}
+   {% else %}
+      <p style="margin: 1em; text-align: center;">Current query found no products in the library.</p>
+{% endif %}
 {% endblock %}

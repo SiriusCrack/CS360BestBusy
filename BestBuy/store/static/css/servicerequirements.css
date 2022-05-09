@@ -34,7 +34,7 @@
    color: grey;
 }
 
-.option_wrapper > input {
+.main-input {
    font-weight: lighter;
    width: calc(10em - 19.2px);
 }
@@ -62,4 +62,9 @@
    color: white;
    outline: 3px solid gray;
    transition: outline 200ms ease-in-out;
+}
+
+.p-input {
+   width: 3em;
+   margin-right: 0.5em;
 }
