@@ -33,15 +33,74 @@ def exactMatch(request):
 
 def priorityCriteria(request):
     if request.method == "POST":
+        # Clean up dict input from POST
+        searchDict = dict()
+        priorityDict = dict()
+        for key in request.POST:
+            if key.find('PRI') > -1:
+                if request.POST[key]:
+                    priorityDict[key]=request.POST[key]
+            elif key.find('csrf') == -1:
+                if request.POST[key]:
+                    searchDict[key]=request.POST[key]
+        # sort search criteria into list by priority
+        priorityKeyList = list(priorityDict.keys())
+        priorityValList = list(priorityDict.values())
+        searchList = list()
+        for i in range(1, len(priorityValList)+1):
+            position = priorityValList.index(str(i))
+            key = priorityKeyList[position]
+            feature = key[3:]
+            searchList.append(feature)
+        # filter
         results = Product.objects
-        return render(
-            request, 
-            'catalog/exact_match.html', 
-            {
-                'search':search,
-                'results':results
-            }
-        )
+        hasResults = False
+        for term in searchList:
+            newResults = results
+            if term == 'minDisplaySize':
+                if searchDict[term] and (searchDict[term] != 0):
+                    newResults = newResults.filter(displaySize__gte=searchDict[term])
+                    hasResults = True
+            if term == 'maxDisplaySize':
+                if searchDict[term] and (searchDict[term] != 0):
+                    newResults = newResults.filter(displaySize__lte=searchDict[term])
+                    hasResults = True
+            if term == 'deliveryTime':
+                if searchDict[term] and (searchDict[term] != 0):
+                    newResults = newResults.filter(deliveryTime__lte=searchDict[term])
+                    hasResults = True
+            if term == 'deliveryCharge':
+                if searchDict[term] and (searchDict[term] != 'none'):
+                    if searchDict[term] == 'no':
+                        newResults = newResults.filter(deliveryCharge=False)
+                        hasResults = True
+            if term == 'price':
+                if searchDict[term] and (searchDict[term] != 0):
+                    newResults = newResults.filter(price__lte=searchDict[term])
+                    hasResults = True
+            if term == 'brand_id':
+                if searchDict[term] and (searchDict[term] != '0'):
+                    newResults = newResults.filter(brand_id=searchDict[term])
+                    hasResults = True
+            if term == 'displayType_id':
+                if searchDict[term] and (searchDict[term] != '0'):
+                    newResults = newResults.filter(displayType_id=searchDict[term])
+                    hasResults = True
+            if newResults:
+                results = newResults
+            else:
+                break
+        if hasResults:
+            return render(
+                request,
+                'catalog/priority_criteria.html',
+                {
+                    'results':results,
+                    'hasResults':hasResults
+                }
+            )
+        else:
+            return render(request, 'catalog/priority_criteria.html', {'hasResults':hasResults})
     else:
         return render(request, 'catalog/priority_criteria.html')
 

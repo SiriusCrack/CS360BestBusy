@@ -6,7 +6,7 @@
 <form class="req_form" method="POST" action="{% url 'priorityCrit' %}">
    {% csrf_token %}
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityBrand"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRIbrand_id"></input>
       <label for="brand_id">Brand</label>
       <select name="brand_id">
          <option value="0">None</option>
@@ -22,7 +22,7 @@
       </select>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityType"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRIproductType_id"></input>
       <label for="productType_id">Product Type</label>
       <select name="productType_id">
          <option value="0">None</option>
@@ -31,7 +31,7 @@
       </select>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityDisplay"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRIdisplayType_id"></input>
       <label for="displayType_id">Display Type</label>
       <select name="displayType_id">
          <option value="0">None</option>
@@ -42,22 +42,22 @@
       </select>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityMinSize"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRIminDisplaySize"></input>
       <label for="minDisplaySize">Minimum Display Size</label>
       <input class="main-input" type="number" placeholder="Inches" name="minDisplaySize" min="0"></input>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityMaxSize"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRImaxDisplaySize"></input>
       <label for="maxDisplaySize">Maximum Display Size</label>
       <input class="main-input" type="number" placeholder="Inches" name="maxDisplaySize" min="0"></input>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityDelivery"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRIdeliveryTime"></input>
       <label for="deliveryTime">Maximum Delivery Time</label>
       <input class="main-input" type="number" placeholder="Days" name="deliveryTime" min="0"></input>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="priorityCharge"></input>
+      <input class="p-input" placeholder="*" type="number" min="1" max="9" name="PRIdeliveryCharge"></input>
       <label for="deliveryCharge">Delivery Charge</label>
       <select name="deliveryCharge">
          <option value="none">No</option>
@@ -65,7 +65,7 @@
       </select>
    </div>
    <div class="option_wrapper">
-      <input class="p-input" placeholder="*" type="number" min="0" max="9" name="priorityPrice"></input>
+      <input class="p-input" placeholder="*" type="number" min="0" max="9" name="PRIprice"></input>
       <label for="price">Price Limit</label>
       <input class="main-input" type="number" placeholder="USD" name="price" min="0"></input>
    </div>
