@@ -38,11 +38,15 @@
       </select>
    </div>
    <div class="option_wrapper">
-      <label for="displaySize">Display Size</label>
-      <input type="number" placeholder="Inches" name="displaySize" min="0"></input>
+      <label for="minDisplaySize">Minimum Display Size</label>
+      <input type="number" placeholder="Inches" name="minDisplaySize" min="0"></input>
    </div>
    <div class="option_wrapper">
-      <label for="deliveryTime">Delivery Time</label>
+      <label for="maxDisplaySize">Maximum Display Size</label>
+      <input type="number" placeholder="Inches" name="maxDisplaySize" min="0"></input>
+   </div>
+   <div class="option_wrapper">
+      <label for="deliveryTime">Maximum Delivery Time</label>
       <input type="number" placeholder="Days" name="deliveryTime" min="0"></input>
    </div>
    <div class="option_wrapper">
@@ -54,7 +58,7 @@
       </select>
    </div>
    <div class="option_wrapper">
-      <label for="price">Price</label>
+      <label for="price">Price Limit</label>
       <input type="number" placeholder="USD" name="price" min="0"></input>
    </div>
    <button class="submit_button" type="submit" name="submitRequirements">Submit</button>

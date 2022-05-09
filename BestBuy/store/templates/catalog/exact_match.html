@@ -13,7 +13,7 @@
     </div> 
     {% for product in results %}
       <ul class="product_item">
-        <a href="">{{product}}</a>
+        <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
       </ul>
     {% endfor %}
   {% endif %}
