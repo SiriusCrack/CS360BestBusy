@@ -52,9 +52,8 @@
    <div class="option_wrapper">
       <label for="deliveryCharge">Delivery Charge</label>
       <select name="deliveryCharge">
-         <option value="none">None</option>
-         <option value="yes">Yes</option>
-         <option value="no">No</option>
+         <option value="none">No</option>
+         <option value="no">Yes</option>
       </select>
    </div>
    <div class="option_wrapper">
@@ -64,11 +63,13 @@
    <button class="submit_button" type="submit" name="submitRequirements">Submit</button>
 </form>
 {% if results %}
-   <div class="user-search">Results:</div> 
+   <div class="user-search" style="margin-bottom: 1em;">Results:</div> 
    {% for product in results %}
       <ul class="product_item">
          <a href="{% url 'productDetail' product.productID %}">{{product}}</a>
       </ul>
    {% endfor %}
+   {% else %}
+      <p style="margin: 1em; text-align: center;">Current query found no products in the library.</p>
 {% endif %}
 {% endblock %}
