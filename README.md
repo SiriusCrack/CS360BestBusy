@@ -11,7 +11,7 @@ Once dependencies are installed, the development version of the site can be view
 ```python manage.py runserver localhost:8000```
 
 ### Superuser Info
-This is the login information for accessing Django's admin page using the project's superuser account.
+This is the login information for accessing Django's admin page using the project's superuser account, found at the `/admin` URL path.
 
 Login: `bestbuyadmin`
 
