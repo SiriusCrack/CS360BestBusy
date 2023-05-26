@@ -1,12 +1,18 @@
 # Best Buy
+This is a data-driven dynamic website built by Morgan Brockman and Ian Fleming for our CS360-Data Science course using the Django web framework.
 
-CS360 Best Buy project by Morgan Brockman and Ian Fleming
+## Usage
+Dependencies can be installed using the provided requirements.txt file. For example:
 
-## Info
+```pip install -r requirements.txt```
 
-Built using Django.
+Once dependencies are installed, the development version of the site can be viewed by passing an address to `manage.py`'s `runserver` command and visiting the provided address in your browser. For example:
 
-* Login: `bestbuyadmin`
-* Password: `circuitcity`
+```python manage.py runserver localhost:8000```
 
-[Visit Site](http://bestbuy.jake.dog:4230/)
+### Superuser Info
+This is the login information for accessing Django's admin page using the project's superuser account.
+
+Login: `bestbuyadmin`
+
+Password: `circuitcity`
